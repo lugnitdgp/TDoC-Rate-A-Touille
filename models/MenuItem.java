@@ -5,25 +5,39 @@ public class MenuItem {
     private int id;
     private double price;
     private String item;
+    private int qty;
+    private int tpp;
+    private int nppt;
 
     public MenuItem() {
-        id = 0;
+        id = qty = tpp = nppt = 0;
         price = 0.0;
         item = "";
     }
 
-    public MenuItem(int id, double price, String item) {
+    public MenuItem(int id, double price, String item, int qty, int tpp, int nppt) {
         this.id = id;
         this.price = price;
         this.item = item;
+        this.qty = qty;
+        this.tpp = tpp;
+        this.nppt = nppt;
     }
 
-    public String getItem() {
+    public String getName() {
         return this.item;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public double getPrice() {
         return this.price;
+    }
+
+    public int getQty() {
+        return this.qty;
     }
 
     public void displayItem() {

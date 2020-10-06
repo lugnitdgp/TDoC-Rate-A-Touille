@@ -10,6 +10,12 @@ public class Staff {
 
     }
 
+    public Staff(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
     public Staff(String name, int id, String pass, int age, double salary, String salt) {
         this.name = name;
         this.id = id;
