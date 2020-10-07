@@ -6,8 +6,8 @@ public class MenuItem {
     private double price;
     private String item;
     private int qty;
-    private int tpp;
-    private int nppt;
+    private int tpp; // unit time tpp
+    private int nppt; // nos of plates that can be processed in unit time tpp
 
     public MenuItem() {
         id = qty = tpp = nppt = 0;
@@ -26,6 +26,14 @@ public class MenuItem {
 
     public String getName() {
         return this.item;
+    }
+
+    public int getTpp() {
+        return this.tpp;
+    }
+
+    public int getNppt() {
+        return this.nppt;
     }
 
     public int getId() {

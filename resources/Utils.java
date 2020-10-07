@@ -4,7 +4,14 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+import models.Order;
+
 // encrypted password and random salt
+// arranging orders by priority queue implementation
 
 public class Utils {
 
@@ -39,4 +46,26 @@ public class Utils {
 
     }
 
+    public static ArrayList<Order> arrangeOrdersByPriority(ArrayList<Order> orders) {
+
+        ArrayList<Order> sorted = new ArrayList<>();
+
+        PriorityQueue<Order> pq = new PriorityQueue<>(new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                return (int) (o2.getPriority() - o1.getPriority()); // max heap
+            }
+        });
+
+        // inserting into the heap
+        for (Order order : orders)
+            pq.add(order);
+
+        // retrieving the sorted orders
+        while (!pq.isEmpty()) {
+            sorted.add(pq.poll());
+        }
+
+        return sorted;
+    }
 }
