@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import rat.models.Staff;
 import rat.models.MenuItem;
 import rat.models.Order;
+import rat.resources.MenuDbHandler;
+import rat.resources.OrdersDbHandler;
+import rat.resources.UserDbHandler;
 /**
  *
  * @author P-G
@@ -23,9 +26,9 @@ public class RAT {
         a.setSalary(750.0);
         a.DisplayDetails();
         
-        MenuItem m1=new MenuItem(1,"Fried rice",120.0,3);
+        MenuItem m1=new MenuItem("Fried rice", 120.0, 1, 1, 1, 3);
         m1.DisplayDetails();
-        MenuItem m2=new MenuItem(2,"Pizza",200.0,2);
+        MenuItem m2=new MenuItem("Pizza", 200.0, 1, 1, 2, 2);
         m2.DisplayDetails();
 
         ArrayList<MenuItem> temp = new ArrayList<MenuItem>();
@@ -34,6 +37,8 @@ public class RAT {
         Order o1=new Order(1,"11:00",temp);
         o1.DisplayDetails();
         
+        UserDbHandler ob1=new UserDbHandler();
+       ob1.registerStaff("PriyajeetGoswami","333", 20, 1000000.0);
     }
     
 }

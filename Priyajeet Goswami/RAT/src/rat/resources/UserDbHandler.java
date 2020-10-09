@@ -83,10 +83,11 @@ public class UserDbHandler {
             String sqlquery="SELECT name,age,salary FROM staff";
             ResultSet rSet=stmt.executeQuery(sqlquery);
             while(rSet.next()){
+                int id=rSet.getInt("id");
                 String name=rSet.getString("name");
                 int age=rSet.getInt("age");
                 double salary=rSet.getDouble("salary");
-                staffList.add(new Staff(name,age,salary));
+                staffList.add(new Staff(id, name, age, salary));
             }   
         }
         catch(SQLException ex){
