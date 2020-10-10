@@ -16,8 +16,30 @@ public class Staff {
     public void setSalary(double salary){
         this.salary= salary;
     }
+    
+    public void setId(int id){
+        this.id= id;
+    }
+    
+    public void setage(int age){
+        this.age= age;
+    }
+    
+    public void setname(String name){
+        this.name= name;
+    }
+    
     public String getName(){
         return name;
+    }
+    public int getId(){
+        return id;
+    }
+    public int getage(){
+        return age;
+    }
+    public double getSalary(){
+        return salary;
     }
 
     public void DisplayDetails(){

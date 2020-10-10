@@ -32,4 +32,29 @@ public class OrdersDbHandler {
        ex.printStackTrace();
     } 
     }
+    public ArrayList getOrders()
+    {
+        ArrayList<Order> orders = new ArrayList<>();
+        try(
+                Connection conn = DriverManager.getConnection(StringConstants.DB_URL,StringConstants.USER,StringConstants.PASS);
+                Statement stmt=conn.createStatement();
+                )
+        {
+            String select = "SELECT id,timePlaced,items FROM orders";
+            ResultSet rSet=stmt.executeQuery(select);
+            while(rSet.next())
+            {
+                int id = rSet.getInt("id");
+                String timePlaced = rSet.getString("timePlaced");
+                String items = rSet.getString("items");
+                orders.add(new Order(id,timePlaced,items));
+            }
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e);
+        }
+        return orders;
+    }
+    
 }

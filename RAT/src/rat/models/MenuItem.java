@@ -7,7 +7,7 @@ public class MenuItem {
     private int tpp;
     private int nppt;
 
-    public MenuItem(String name,double price,int nppt,int tpp,int id,int qty){
+    public MenuItem(int id, String name,double price,int qty,int tpp,int nppt){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -18,6 +18,10 @@ public class MenuItem {
 
     public void setName(String name){
     this.name = name;
+    }
+    
+    public String getName(){
+        return name;
     }
 
     public double getPrice(){
@@ -36,7 +40,29 @@ public class MenuItem {
     public int getnppt(){
         return nppt;
     }
-    public void DisplayDetails(){
-        System.out.println(id+" "+name+" "+price);
+    
+    public void setId(int id){
+        this.id=id;
+    }
+    
+    public void setQuantity(int qty)
+    {
+        this.qty=qty;
+    }
+    public void setPrice(double price)
+    {
+        this.price=price;
+    }
+    public void setNppt(int nppt)
+    {
+        this.nppt=nppt;
+    }
+    public void setTpp(int tpp)
+    {
+        this.tpp=tpp;
+    }
+    public void displayDetails()
+    {
+        System.out.println(id+" "+name+" "+qty+" "+price+" "+nppt+" "+tpp);
     }
 }

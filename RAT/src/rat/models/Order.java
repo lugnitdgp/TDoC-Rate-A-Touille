@@ -42,7 +42,7 @@ public class Order {
         System.out.println(id+" "+timePlaced);
 
         for(MenuItem m1 : items){
-            m1.DisplayDetails();
+            m1.displayDetails();
         }
     }
     
