@@ -1,6 +1,16 @@
-package models;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rms.models;
 
+/**
+ *
+ * @author SOUMITRI CHATTERJEE
+ */
 public class Staff {
+    
     private String name, pass;
     private double salary;
     private int id, age;
@@ -67,5 +77,4 @@ public class Staff {
         System.out.println("Salary: Rs." + this.salary);
         System.out.println("Salt: " + this.salt);
     }
-
 }

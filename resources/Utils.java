@@ -1,4 +1,9 @@
-package resources;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rms.resources;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -8,13 +13,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-import models.Order;
+import rms.models.Orders;
 
 // encrypted password and random salt
 // arranging orders by priority queue implementation
 
 public class Utils {
-
+    
     public static String encryptSHA(String pass, String salt) {
         String encrypt = "";
         try {
@@ -46,19 +51,19 @@ public class Utils {
 
     }
 
-    public static ArrayList<Order> arrangeOrdersByPriority(ArrayList<Order> orders) {
+    public static ArrayList<Orders> arrangeOrdersByPriority(ArrayList<Orders> orders) {
 
-        ArrayList<Order> sorted = new ArrayList<>();
+        ArrayList<Orders> sorted = new ArrayList<>();
 
-        PriorityQueue<Order> pq = new PriorityQueue<>(new Comparator<Order>() {
+        PriorityQueue<Orders> pq = new PriorityQueue<>(new Comparator<Orders>() {
             @Override
-            public int compare(Order o1, Order o2) {
+            public int compare(Orders o1, Orders o2) {
                 return (int) (o2.getPriority() - o1.getPriority()); // max heap
             }
         });
 
         // inserting into the heap
-        for (Order order : orders)
+        for (Orders order : orders)
             pq.add(order);
 
         // retrieving the sorted orders
@@ -68,4 +73,5 @@ public class Utils {
 
         return sorted;
     }
+    
 }

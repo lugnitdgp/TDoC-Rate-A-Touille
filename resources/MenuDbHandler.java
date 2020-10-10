@@ -1,16 +1,26 @@
-package resources;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rms.resources;
 
 // function to add menu based on MenuItem parameters
 // findInMenu(id,qty) and addToMenu(MenuItem)
 // add a function to query by name: params= name and qty
 
-import models.MenuItem;
-import rat.StringConst;
+import rms.models.MenuItem;
+import rms.StringConst;
 
 import java.sql.*;
+import java.util.ArrayList;
 
+/**
+ *
+ * @author SOUMITRI CHATTERJEE
+ */
 public class MenuDbHandler {
-
+    
     // adding items to menu
 
     public void addToMenu(String name, double price, int qty, int nppt, int tpp) {
@@ -78,5 +88,32 @@ public class MenuDbHandler {
         }
         return item;
     }
-
+    
+    public ArrayList<MenuItem> getMenu() {
+        
+        ArrayList<MenuItem> menu=new ArrayList<>();
+        
+        try (
+                 Connection conn = DriverManager.getConnection(StringConst.DB_URL, StringConst.USER, StringConst.PASS);  
+                Statement statement = conn.createStatement();) 
+        {
+            String selectCommand = "SELECT id,name,price,tpp,nppt FROM menu";
+            ResultSet rSet=statement.executeQuery(selectCommand);
+            
+            while(rSet.next())
+            {
+                int id=rSet.getInt("id");
+                String name=rSet.getString("name");
+                double price=rSet.getDouble("price");
+                int tpp=rSet.getInt("tpp");
+                int nppt=rSet.getInt("nppt");
+                menu.add(new MenuItem(id,price,item,0,tpp,nppt));
+            }
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return menu;
+    }
+    
 }

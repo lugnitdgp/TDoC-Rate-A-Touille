@@ -1,7 +1,15 @@
-package models;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rms.models;
 
+/**
+ *
+ * @author SOUMITRI CHATTERJEE
+ */
 public class MenuItem {
-
     private int id;
     private double price;
     private String item;
@@ -51,5 +59,4 @@ public class MenuItem {
     public void displayItem() {
         System.out.println(id + "\t" + item + "\t" + price);
     }
-
 }

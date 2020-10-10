@@ -1,6 +1,11 @@
-package resources;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rms.resources;
 
-import rat.StringConst;
+import rms.StringConst;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,14 +14,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import models.Staff;
+import rms.models.Staff;
 
 // for registering and adding Staff to the DB
 // logging in for staff by authenticating password and salt
 // if authentication incorrect print "No such User exist"
 
-public class UserDbHandler {
-    // registering a new Staff
+public class UsersDbHandler {
+    
+     // registering a new Staff
     public void registerStaff(String name, String pass, int age, double salary) {
         try (Connection connection = DriverManager.getConnection(StringConst.DB_URL, StringConst.USER,
                 StringConst.PASS); Statement statement = connection.createStatement();) {
@@ -25,7 +31,7 @@ public class UserDbHandler {
             String encryptedPass = Utils.encryptSHA(pass, salt);
 
             // SQL command for insertion of data
-            String insertCommand = "INSERT INTO staff (name,salt,pass,age,salary) VALUES ( '" + name + "', '" + salt
+            String insertCommand = "INSERT INTO staff (name,salt,password,age,salary) VALUES ( '" + name + "', '" + salt
                     + "', '" + encryptedPass + "', " + age + ", " + salary + " )";
 
             int flag = statement.executeUpdate(insertCommand);
