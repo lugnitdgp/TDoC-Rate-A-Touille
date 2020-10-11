@@ -15,3 +15,6 @@
 ## **Aim of the Project**
 
 The aim of the project is to provide a basic understanding of FullStack Software Development and how it can be achieved in Java and MySQL, without the use of any additional framework.
+
+
+#### To run the application, open StringConst.java and put your own Database credentials.
