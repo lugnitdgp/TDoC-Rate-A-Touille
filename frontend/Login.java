@@ -123,6 +123,8 @@ public class Login extends javax.swing.JFrame {
         boolean result=new UsersDbHandler().loginStaff(etUsername.getText(), String.valueOf(etPassword.getPassword()));
         if(result) {
             Popup ob=new Popup("Successfully Logged in !");
+            AppScreen app=new AppScreen();
+            app.setVisible(true);
             ob.setVisible(true);
             this.dispose();
         } else {

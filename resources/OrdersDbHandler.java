@@ -85,7 +85,7 @@ public class OrdersDbHandler {
         try (
                  Connection conn = DriverManager.getConnection(StringConst.DB_URL, StringConst.USER, StringConst.PASS);  
                 Statement statement = conn.createStatement();) {
-            String selectCommand = "SELECT id,timePlaced,items from orders";
+            String selectCommand = "SELECT id,timeofOrder,items from orders";
             ResultSet rSet = statement.executeQuery(selectCommand);
             ArrayList<MenuItem> item=new ArrayList();
             while (rSet.next()) {

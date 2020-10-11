@@ -74,7 +74,7 @@ public class MenuDbHandler {
         try (Connection connection = DriverManager.getConnection(StringConst.DB_URL, StringConst.USER,
                 StringConst.PASS); Statement statement = connection.createStatement();) {
 
-            String selectCommand = "SELECT name,price,tpp,nppt,id FROM menu WHERE id=" + id;
+            String selectCommand = "SELECT id,price,name,tpp,nppt FROM menu WHERE id=" + id;
 
             ResultSet rSet = statement.executeQuery(selectCommand);
             rSet.next();
@@ -107,7 +107,7 @@ public class MenuDbHandler {
                 double price=rSet.getDouble("price");
                 int tpp=rSet.getInt("tpp");
                 int nppt=rSet.getInt("nppt");
-                menu.add(new MenuItem(id,price,item,0,tpp,nppt));
+                menu.add(new MenuItem(id,price,name,0,tpp,nppt));
             }
         }
         catch(SQLException e) {
