@@ -11,10 +11,10 @@ package rms;
  */
 public class StringConst {
     /**
-    * DECLARE AND SAVE YOUR URL, PASSWORD AND USER OF YOUR MySQL DATABASE
-    */
+     * DECLARE AND SAVE YOUR URL, PASSWORD AND USER OF YOUR MySQL DATABASE
+     */
 
-    public static final String DB_URL = "jdbc:mysql://localhost:3306/rmsDB"; 
-    public static final String USER="root"; 
-    public static final String PASS="Sou@2001";
+    public static final String DB_URL = "jdbc:mysql://localhost:3306/rmsDB";
+    public static final String USER = "root";
+    public static final String PASS = "*********"; // YOUR OWN PASSWORD
 }
