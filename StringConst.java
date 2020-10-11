@@ -16,5 +16,5 @@ public class StringConst {
 
     public static final String DB_URL = "jdbc:mysql://localhost:3306/rmsDB"; 
     public static final String USER="root"; 
-    public static final String PASS="Sou@2001";
+    public static final String PASS="**************"; // ENTER YOUR PASSWORD
 }
