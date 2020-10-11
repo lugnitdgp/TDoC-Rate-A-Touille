@@ -52,20 +52,27 @@ public class UsersDbHandler {
                 StringConst.PASS); Statement statement = connection.createStatement();) {
 
             // SQL command to retrieve row
-            String selectCommand = "SELECT salt, password from staff WHERE name = '" + name + "'";
+            String selectCommand = "SELECT salt,password from staff WHERE name = '" + name + "'";
             ResultSet rSet = statement.executeQuery(selectCommand);
             rSet.next();
 
             // getting saved DB data
             String dbSalt = rSet.getString("salt"), dbPass = Utils.encryptSHA(pass, dbSalt);
+            
+            String dbPass2 = rSet.getString("password");
+          
+            
+            System.out.println(dbSalt+"\t"+dbPass);
 
-            auth = dbPass.equals(pass);
-
-        } catch (Exception e) {
+            auth = dbPass2.equals(dbPass);
+        
+            if (!auth)
             System.out.println("No such user exists!");
+        } 
+        catch (SQLException e) {
+            System.out.println("Exception thrown!");
         }
-        if (!auth)
-            System.out.println("No such user exists!");
+        
 
         return auth;
     }

@@ -39,7 +39,7 @@ public class OrdersDbHandler {
             order += "," + id + ":" + qty;// convert to desired format
         }
 
-        order = (order.length()==1)? "" : order.substring(1); // omitting out the first comma
+        order = order.substring(1); // omitting out the first comma
 
         addOrder2(timeOfOrder, order);
     }
@@ -90,7 +90,7 @@ public class OrdersDbHandler {
             ArrayList<MenuItem> item=new ArrayList();
             while (rSet.next()) {
                 int id = rSet.getInt("id");
-                String timePlaced = rSet.getString("timePlaced");
+                String timePlaced = rSet.getString("timeofOrder");
                 String items = rSet.getString("items");
                 MenuDbHandler menu=new MenuDbHandler();
                 

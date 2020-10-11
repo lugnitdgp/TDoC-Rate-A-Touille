@@ -24,13 +24,17 @@ public class RMS {
 
         System.out.println(status);
         
-//        UsersDbHandler ob=new UsersDbHandler();
-//        ob.registerStaff("Soumitri", "1234", 20, 100000.00);
-//        ob.registerStaff("Sreejit", "mav00", 25, 1000000.00);
-//        ob.registerStaff("Sattam","qwerty",23,100000.00);
+        //UsersDbHandler ob=new UsersDbHandler();
+        
+//        ob.registerStaff("Arnab", "1234", 20, 100000.00);
+//        ob.registerStaff("Sourshish", "mav00", 25, 1000000.00);
+//        ob.registerStaff("Aritra","qwerty",23,100000.00);
+//        ob.registerStaff("Soham","sedcats10",22,100000.00);
+
+        //ob.loginStaff("Aritra", "qwerty");
         
 //        Login ob=new Login();
-//        Login.main(new String[]{""});
+//        ob.setVisible(true);
 
 //        MenuDbHandler menu=new MenuDbHandler();
 //        menu.addToMenu("Butter Naan", 55.00, 100, 2, 2);
@@ -40,7 +44,7 @@ public class RMS {
 //        menu.addToMenu("Mixed CHowmein",160.00,100,4,3);
 //        menu.addToMenu("Chili FIsh", 190.00,100,7,5);
 
-        AppScreen.main(new String[]{""});
+         AppScreen.main(new String[]{""});
 
     }
     

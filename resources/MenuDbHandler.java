@@ -51,7 +51,7 @@ public class MenuDbHandler {
         try (Connection connection = DriverManager.getConnection(StringConst.DB_URL, StringConst.USER,
                 StringConst.PASS); Statement statement = connection.createStatement();) {
 
-            String selectCommand = "SELECT name,price,tpp,nppt,id FROM menu WHERE name=" + name;
+            String selectCommand = "SELECT name,price,tpp,nppt,id FROM menu WHERE name= '" + name+ "'";
 
             ResultSet rSet = statement.executeQuery(selectCommand);
             rSet.next();
